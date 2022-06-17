@@ -1,6 +1,6 @@
+import 'package:bmi_calculator/pages/calculation_page.dart';
+import 'package:bmi_calculator/pages/show_details_page.dart';
 import 'package:flutter/material.dart';
-
-import 'money_conv/homepage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,19 +13,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home:HomePage(),
+      initialRoute: CalculationPage.routeName,
+      routes: {
+        CalculationPage.routeName: (context) => CalculationPage(),
+        ShowDetailsPage.routeName: (context) => ShowDetailsPage(),
+
+      },
     );
   }
-
 }
-
-
-
-
-
-
